@@ -39,6 +39,7 @@ public class exercicio1 {
                 tentativas += 1;
                 if ("b".equals(alternativaEscolhida) || "B".equals(alternativaEscolhida)) {
                     System.out.println("Resposta Correta!\n");
+                    tentativas += 100;
                 }
                 else {
                     System.out.println("Resposta Incorreta!\n");
@@ -49,6 +50,7 @@ public class exercicio1 {
                 tentativas += 1;
                  if ("b".equals(alternativaEscolhida) || "B".equals(alternativaEscolhida)) {
                     System.out.println("Resposta Correta na tentativa " + tentativas + "!\n");
+                    tentativas += 100;
                 }
                 else {
                     System.out.println("Resposta Incorreta!\n");
@@ -59,6 +61,7 @@ public class exercicio1 {
                 tentativas += 1;
                  if ("b".equals(alternativaEscolhida) || "B".equals(alternativaEscolhida)) {
                     System.out.println("Resposta Correta na tentativa " + tentativas + "!\n");
+                    tentativas += 100;
                 }
                 else {
                     System.out.println("Resposta Incorreta!\n");
@@ -71,6 +74,6 @@ public class exercicio1 {
                 break;
             }
             }
-        while ((alternativaEscolhida == "b" || alternativaEscolhida == "b") && tentativas < 4);
+        while (tentativas < 4);
     }
 }
