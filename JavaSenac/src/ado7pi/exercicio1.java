@@ -1,6 +1,7 @@
-package ado6pi;
+package ado7pi;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class exercicio1 {
@@ -36,6 +37,11 @@ public class exercicio1 {
         
         do {
             System.out.println(questao);
+            for (int i = 0; i < alternativas.size(); i++) {
+                System.out.printf("%s\n", alternativas.get(i));
+            }
+            System.out.println();
+            Collections.shuffle(alternativas);
             System.out.print("Qual a alternativa correta: ");
             alternativaEscolhida = input.next();
             switch (tentativas) {
@@ -44,7 +50,7 @@ public class exercicio1 {
                 tentativas += 1;
                 if ("b".equals(alternativaEscolhida) || "B".equals(alternativaEscolhida)) {
                     System.out.println("Resposta Correta!\n");
-                    tentativas += 100;
+                    tentativas = -1;
                 }
                 else {
                     System.out.println("Resposta Incorreta!\n");
@@ -55,30 +61,26 @@ public class exercicio1 {
                 tentativas += 1;
                  if ("b".equals(alternativaEscolhida) || "B".equals(alternativaEscolhida)) {
                     System.out.println("Resposta Correta na tentativa " + tentativas + "!\n");
-                    tentativas += 100;
+                    tentativas = -1;
                 }
                 else {
                     System.out.println("Resposta Incorreta!\n");
                 }
                 break;
                 
-            case 2:
+            default:
                 tentativas += 1;
                  if ("b".equals(alternativaEscolhida) || "B".equals(alternativaEscolhida)) {
                     System.out.println("Resposta Correta na tentativa " + tentativas + "!\n");
-                    tentativas += 100;
+                    tentativas = -1;
                 }
                 else {
                     System.out.println("Resposta Incorreta!\n");
                 }
                 break;
-                
-            case 3:
-                System.out.println("Resposta incorreta nas três tentativas");
-                tentativas += 1;
-                break;
             }
             }
-        while (tentativas < 4);
+        while (tentativas >= 0);
     }
 }
+
